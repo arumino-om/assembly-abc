@@ -44,9 +44,9 @@ _start:
 
     ; initialize and call "print" function
     lea     eax, [msg01_end - msg01]
-    push    eax		; count
-    push    msg01	; text
-    push    ebx		; handle
+    push    eax     ; count
+    push    msg01   ; text
+    push    ebx     ; handle
     call    print
 
     lea     eax, [msg02_end - msg02]
@@ -77,13 +77,13 @@ print:
 
     ; WriteFile(handle, msg, msg_length, &wrote_per_bytes, 0)
     push    0
-    lea     eax, [esp + 4]	; &wrote_per_bytes
+    lea     eax, [esp + 4]  ; &wrote_per_bytes
     push    eax
-    mov     eax, [ebp + 16]	; count
+    mov     eax, [ebp + 16] ; count
     push    eax
-    mov     eax, [ebp + 12]	; msg
+    mov     eax, [ebp + 12] ; msg
     push    eax
-    mov     eax, [ebp + 8]	; handle
+    mov     eax, [ebp + 8]  ; handle
     push    eax
     call    _WriteFile@20
 
