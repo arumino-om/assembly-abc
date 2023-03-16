@@ -25,11 +25,14 @@ extern  _WriteFile@20
 extern  _ExitProcess@4
 
 section	.data:
-    msg01:      db "Hello World",0
+    msg01:      db "Hello, World",10
     msg01_end:  db 0
 
-    msg02:      db "yeah"
+    msg02:      db "This program is written in assembly.",10
     msg02_end:  db 0
+
+    msg03:      db "ÇøÇ·ÇÒÇ∆ì˙ñ{åÍÇ‡èoóÕÇ≈Ç´ÇÈÇÊ (Shift-JISÇæÇØÇ«)",10
+    msg03_end:  db 0
 
 section	.text
     global  _start
@@ -52,6 +55,12 @@ _start:
     lea     eax, [msg02_end - msg02]
     push    eax
     push    msg02
+    push    ebx
+    call    print
+
+    lea     eax, [msg03_end - msg03]
+    push    eax
+    push    msg03
     push    ebx
     call    print
 
