@@ -24,7 +24,7 @@ extern  _GetStdHandle@4
 extern  _WriteFile@20
 extern  _ExitProcess@4
 
-section	.data:
+section .data:
     msg01:      db "Hello, World",10
     msg01_end:  db 0
 
@@ -34,7 +34,7 @@ section	.data:
     msg03:      db "‚¿‚á‚ñ‚Æ“ú–{Œê‚ào—Í‚Å‚«‚é‚æ (Shift-JIS‚¾‚¯‚Ç)",10
     msg03_end:  db 0
 
-section	.text
+section .text
     global  _start
 
 
